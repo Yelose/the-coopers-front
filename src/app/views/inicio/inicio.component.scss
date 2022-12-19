@@ -1,0 +1,43 @@
+@import "../../../variables.scss";
+
+.container {
+  ul {
+    margin: auto;
+    li {
+      list-style-type: disc;
+      list-style-position: inside;
+    }
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    table {
+      box-shadow: $box-shadow;
+      thead {
+        padding: 10px;
+        background-color: $secondary-color-bg;
+        th {
+          padding: 8px 0;
+        }
+      }
+      tbody {
+        tr {
+          th,
+          td {
+            padding: 8px 10px;
+          }
+        }
+        tr:nth-child(even) {
+          background-color: $secondary-light-bg;
+        }
+        tr:nth-child(odd) {
+          background-color: $secondary-lightest-bg;
+        }
+        tr:first-child {
+          background-color: white;
+        }
+      }
+    }
+  }
+}

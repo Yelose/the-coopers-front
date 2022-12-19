@@ -1,0 +1,19 @@
+@import "../../../variables.scss";
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: $main-color-bg;
+  color: white;
+  div {
+    display: flex;
+    a,
+    p {
+      text-decoration: none;
+      color: white;
+      padding: 10px 15px;
+    }
+    a:hover {
+      background-color: hsla(0, 0%, 100%, 0.2);
+    }
+  }
+}
