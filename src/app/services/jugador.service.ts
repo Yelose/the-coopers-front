@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import Jugador from '../models/jugador';
 import { MainService } from './main.service';
 
 @Injectable({

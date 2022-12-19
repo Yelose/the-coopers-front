@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { JugadorService } from './jugador.service';
 
 @Injectable({
   providedIn: 'root',
@@ -7,24 +8,9 @@ import { Injectable } from '@angular/core';
 export class MainService {
   public URL: string;
 
-  constructor(
-    public http: HttpClient,
-
-    public item: ItemService,
-    public room: RoomService,
-    public shelving: ShelvingService,
-    public section: SectionService,
-    public position: PositionService,
-    public box: BoxService
-  ) {
-    this.item.service = this;
-    this.room.service = this;
-    this.shelving.service = this;
-    this.section.service = this;
-    this.position.service = this;
-    this.box.service = this;
-
-    this.URL = 'http://localhost:8080/api';
+  constructor(public http: HttpClient, public jugador: JugadorService) {
+    this.jugador.service = this;
+    this.URL = 'http://localhost:9090/api';
   }
 
   public async HttpGet<T>(url: string, params?: any): Promise<T> {
@@ -90,9 +76,7 @@ export class MainService {
     return new Promise<T>(async (resolve, reject) => {
       let headers = new HttpHeaders();
       headers = headers.append('Content-Type', 'application/json');
-
       params = params || {};
-
       const options = {
         headers,
       };
@@ -116,7 +100,6 @@ export class MainService {
     return new Promise<T>(async (resolve, reject) => {
       let headers = new HttpHeaders();
       headers = headers.append('Content-Type', 'application/json');
-
       params = params || {};
       let httpParams = new HttpParams();
       for (let param in params) {
