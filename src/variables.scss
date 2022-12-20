@@ -1,15 +1,11 @@
 $main-color: 200;
-$main-contrast: 100;
-$main-brightness: 35;
+$main-contrast: 100%;
+$main-brightness: 35%;
 
 $main-color-bg: hsl($main-color, $main-contrast, $main-brightness);
-$hover-color-bg: hsl(
-  $main-color,
-  calc($main-contrast - 20),
-  calc($main-brightness + 10)
-);
+$hover-color-bg: hsl($main-color, 80%, 45%);
 
-$secondary-color-bg: hsl($main-color, $main-contrast, 85);
-$secondary-light-bg: hsl($main-color, $main-contrast, 95);
-$secondary-lightest-bg: hsl($main-color, $main-contrast, 98);
+$secondary-color-bg: hsl($main-color, $main-contrast, 85%);
+$secondary-light-bg: hsl($main-color, $main-contrast, 95%);
+$secondary-lightest-bg: hsl($main-color, $main-contrast, 98%);
 $box-shadow: 2px 2px 4px gray;

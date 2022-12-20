@@ -1,0 +1,36 @@
+@import "../../../variables.scss";
+.container {
+    width: 100%;
+    section {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 3vh;
+            figure{
+                width: fit-content;
+                background-color: $secondary-light-bg;
+                width: 100%;
+                border-radius: 50%;
+                border: 5px solid $main-color-bg;
+                img{
+                    width: 10vw;
+                    height: 10vw;
+                    max-width: 120px;
+                    max-height: 120px;
+                    min-height: 60px;
+                    min-width: 60px;
+                }
+            }
+            .inverted {
+                > img {
+                    transform: rotateY(180deg);
+                }
+            }
+        }
+    }
+}

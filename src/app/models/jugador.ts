@@ -1,6 +1,7 @@
 export default class Jugador {
   public id: number;
-  public ganadas: number;
-  public perdidas: number;
-  public empates: number;
+  public jugador: string;
+  public opcion: number;
+  public ordenador: number;
+  public fecha: Date;
 }
