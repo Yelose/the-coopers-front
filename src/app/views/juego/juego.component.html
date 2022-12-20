@@ -16,5 +16,52 @@
             </figure>
         </div>
     </section>
+    <section>
+        <div class="resultado">
+            <p>Resultado de la partida:</p>
+            <p>Pepito ha elegido tijera, el ordenador ha elegido tijera</p>
+            <h3>EMPATE</h3>
+        </div>
+    </section>
+    <form action="post">
+        <div>
+            <label for="nombre">Nombre: </label>
+            <input type="text" name="nombre">
+        </div>
+        
+        <fieldset>
+            <div>
+                <input type="radio" name="eleccion-jugador" value="1" checked>
+                <label for="piedra">
+                    <img src="../../../assets/img/piedra.png" alt="piedra">
+                </label>
+            </div>
+            <div>
+                <input type="radio" name="eleccion-jugador" value="2">
+                <label for="papel">
+                    <img src="../../../assets/img/papel.png" alt="papel">
+                </label>
+            </div>
+            <div>
+                <input type="radio" name="eleccion-jugador" value="3">
+                <label for="tijera">
+                    <img src="../../../assets/img/tijera.png" alt="tijera">
+                </label>
+            </div>
+            <div>
+                <input type="radio" name="eleccion-jugador" value="4">
+                <label for="lagarto">
+                    <img src="../../../assets/img/lagarto.png" alt="lagarto">
+                </label>
+            </div>
 
+            <div>
+                <input type="radio" name="eleccion-jugador" value="5">
+                <label for="spock">
+                    <img src="../../../assets/img/spock.png" alt="spock">
+                </label>
+            </div>
+        </fieldset>
+        <button type="submit">Jugar</button>
+    </form>
 </div>

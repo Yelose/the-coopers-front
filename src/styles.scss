@@ -24,6 +24,7 @@ button {
   border-radius: 4px;
   box-shadow: $box-shadow;
   color: white;
+  border: none;
 }
 button:hover {
   background-color: $hover-color-bg;
