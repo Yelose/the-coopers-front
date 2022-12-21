@@ -15,12 +15,13 @@ export class JugadorService {
   public async CreateJugador(jugador: Jugador): Promise<Jugador> {
     return await this.service.HttpPost('/juego', jugador);
   }
+  
+  public async GetJugador(id: number): Promise<Jugador> {
+    return await this.service.HttpGet(`/juego/${id}`);
+  }
 
   // public async SearchJugadores(text: string): Promise<Jugador[]> {
   //   return await this.service.HttpGet(`/buscar/${encodeURIComponent(text)}`);
-  // }
-  // public async GetJugador(id: number): Promise<Jugador> {
-  //   return await this.service.HttpGet(`/estadisticas/${id}`);
   // }
   // public async UpdateJugador(jugador: Jugador): Promise<Jugador> {
   //   return await this.service.HttpPut(`/estadisticas/${jugador.id}`, jugador);

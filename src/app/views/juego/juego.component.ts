@@ -12,23 +12,18 @@ export class JuegoComponent implements OnInit {
 
   formPartida : FormGroup;
   public juego: Jugador;
-  public estadisticas: Jugador[];
 
   constructor(private service: MainService, public fb: FormBuilder) { 
     this.formPartida = this.fb.group({
-      nombreJugador: [''],
-      eleccionJugador: ['']
+      nombreJugador: ['Jugador'],
+      eleccionJugador: ['1']
     })
   }
 
-
   async save(): Promise<void> {
-    var formData: any = new FormData();
-    formData.append('nombreJugador', this.formPartida.get('nombreJugador').value);
-    formData.append('eleccionJugador', this.formPartida.get('eleccionJugador').value);
+    this.juego = this.formPartida.value;
     await this.service.jugador.CreateJugador(this.juego);
   }
-
-  async ngOnInit() {  }
-
+  
+  async ngOnInit() {}
 }

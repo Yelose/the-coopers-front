@@ -5,5 +5,5 @@ export default class Jugador {
   public eleccionOrdenador: string;
   public resultado: number;
   public descripcion: string;
-  public fecha: string;
+  public fecha: Date;
 }
