@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { InicioComponent } from './views/inicio/inicio.component';
 import { JuegoComponent } from './views/juego/juego.component';
 import { EstadisticasComponent } from './views/estadisticas/estadisticas.component';
+import { ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EstadisticasComponent } from './views/estadisticas/estadisticas.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
