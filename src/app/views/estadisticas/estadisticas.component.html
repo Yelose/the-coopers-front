@@ -15,7 +15,9 @@
                 <td>{{jugador.nombreJugador}}</td>
                 <td>{{jugador.eleccionJugador}}</td>
                 <td>{{jugador.eleccionOrdenador}}</td>
-                <td>{{jugador.resultado}}</td>
+                <td *ngIf="jugador.resultado == -1">PIERDE</td>
+                <td *ngIf="jugador.resultado == 0">EMPATA</td>
+                <td *ngIf="jugador.resultado == 1">GANA</td>
                 <td>{{jugador.fecha}}</td>
             </tr>
 

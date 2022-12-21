@@ -20,7 +20,7 @@
         <div class="resultado">
             <p>Resultado de la partida:</p>
             <p>Pepito ha elegido tijera, el ordenador ha elegido tijera</p>
-            <h3>EMPATE</h3>
+            <h3>{{juego?.resultado}}</h3>
         </div>
     </section>
     <form  [formGroup]="formPartida" (ngSubmit)="save()">

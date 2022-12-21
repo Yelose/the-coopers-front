@@ -20,10 +20,13 @@ export class JuegoComponent implements OnInit {
     })
   }
 
-  async save(): Promise<void> {
+   save() : void {
     this.juego = this.formPartida.value;
-    await this.service.jugador.CreateJugador(this.juego);
+    this.service.jugador.CreateJugador(this.juego).then((jugador : Jugador)=>{
+      console.log(jugador);
+      this.juego = jugador;
+    })
   }
-  
+
   async ngOnInit() {}
 }
