@@ -1,9 +1,10 @@
 <div class="container">
     <section>
         <div>
-            <h2>Jugador</h2>
-            <figure>
-                <img src="/assets/img/tijera.png" alt="tijera">
+            <h2>{{juego?.nombreJugador}}</h2>
+            <h2 *ngIf="juego?.nombreJugador == undefined">Jugador</h2>
+            <figure *ngIf="juego?.eleccionJugador">
+                <img src="/assets/img/{{juego?.eleccionJugador}}.png" alt="juego?.eleccionJugador">
             </figure>
         </div>
         <div>
@@ -11,56 +12,35 @@
         </div>
         <div>
             <h2>Ordenador</h2>
-            <figure class="inverted">
-                <img src="/assets/img/tijera.png" alt="tijera">
+            <figure *ngIf="juego?.eleccionOrdenador" class="inverted">
+                <img src="/assets/img/{{juego?.eleccionOrdenador}}.png" alt="juego?.eleccionOrdenador">
             </figure>
         </div>
     </section>
     <section>
         <div class="resultado">
             <p>Resultado de la partida:</p>
-            <p>Pepito ha elegido tijera, el ordenador ha elegido tijera</p>
-            <h3>{{juego?.resultado}}</h3>
+            <p>{{juego?.descripcion}}</p>
+            <h3 *ngIf="juego?.resultado == 1">HAS GANADO</h3>
+            <h3 *ngIf="juego?.resultado == -1">HAS PERDIDO</h3>
+            <h3 *ngIf="juego?.resultado == 0">EMPATE</h3>
+
         </div>
     </section>
-    <form  [formGroup]="formPartida" (ngSubmit)="save()">
+    <form [formGroup]="formPartida" (ngSubmit)="save()">
         <div>
             <label for="nombre">Nombre: </label>
             <input type="text" formControlName="nombreJugador">
         </div>
-        
+
         <fieldset>
-            <div>
-                <input type="radio" formControlName="eleccionJugador" value="1">
-                <label for="piedra">
-                    <img src="../../../assets/img/piedra.png" alt="piedra">
-                </label>
-            </div>
-            <div>
-                <input type="radio" formControlName="eleccionJugador" value="2">
-                <label for="papel">
-                    <img src="../../../assets/img/papel.png" alt="papel">
-                </label>
-            </div>
-            <div>
-                <input type="radio" formControlName="eleccionJugador" value="3">
-                <label for="tijera">
-                    <img src="../../../assets/img/tijera.png" alt="tijera">
-                </label>
-            </div>
-            <div>
-                <input type="radio" formControlName="eleccionJugador" value="4">
-                <label for="lagarto">
-                    <img src="../../../assets/img/lagarto.png" alt="lagarto">
+            <div *ngFor="let option of formOptions">
+                <input type="radio" formControlName="eleccionJugador" value={{option.value}}>
+                <label for={{option.for}}>
+                    <img src={{option.img}} alt={{option.for}}>
                 </label>
             </div>
 
-            <div>
-                <input type="radio" formControlName="eleccionJugador" value="5">
-                <label for="spock">
-                    <img src="../../../assets/img/spock.png" alt="spock">
-                </label>
-            </div>
         </fieldset>
         <button type="submit">Jugar</button>
     </form>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import formOption from 'src/app/models/formOptionsModel';
 import Jugador from 'src/app/models/jugador';
 import { MainService } from 'src/app/services/main.service';
 
@@ -10,10 +11,17 @@ import { MainService } from 'src/app/services/main.service';
 })
 export class JuegoComponent implements OnInit {
 
-  formPartida : FormGroup;
+  public formPartida : FormGroup;
   public juego: Jugador;
-
+  public formOptions: formOption[];
   constructor(private service: MainService, public fb: FormBuilder) { 
+    this.formOptions= [
+      {for: "piedra", value: 1, img: "/assets/img/piedra.png"},
+      {for: "papel", value: 2, img: "/assets/img/papel.png"},
+      {for: "tijera", value: 3, img: "/assets/img/tijera.png"},
+      {for: "lagarto", value: 4, img: "/assets/img/lagarto.png"},
+      {for: "spock", value: 5, img: "/assets/img/spock.png"}
+    ];
     this.formPartida = this.fb.group({
       nombreJugador: ['Jugador'],
       eleccionJugador: ['1']
